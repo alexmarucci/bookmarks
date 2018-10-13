@@ -1,0 +1,34 @@
+/**
+ * Styling the bookmarks list using flexbox
+ */
+.list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    &-item {
+        align-items: center;
+        border-bottom: 1px solid $color-separator-light;
+        display: flex;
+        list-style: none;
+        padding: 1em 2em;
+        position: relative;
+        font-size: $font-size-sm;
+        min-height: 32px;
+        // This would align `__controls` to the end of the "flex-container"
+        &__controls {
+            margin-left: auto;
+            color: $color-tertiary;
+        }
+        &__avatar {
+            position: absolute;
+            max-height: 26px;
+            height: 70%;
+            margin-left: -26px;
+            & > svg {
+                vertical-align: middle;
+                height: 100%;
+            }
+        }
+    }
+}

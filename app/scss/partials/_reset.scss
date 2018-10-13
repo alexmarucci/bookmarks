@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Making contaienrs full screen */
+html, body, main, section {
+    color: #2a353b;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #feccb1; /* Old browsers */
+    background: -moz-linear-gradient(15deg,#ff784d 0%, #ff784d 10%, #F44336 40%, #3F51B5 40%, #3F51B5 70%, #03A9F4 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(15deg,#ff784d 0%, #ff784d 10%, #F44336 40%, #3F51B5 40%, #3F51B5 70%, #03A9F4 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(15deg,#ff784d 0%, #ff784d 10%, #F44336 40%, #3F51B5 40%, #3F51B5 70%, #03A9F4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#fb955e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}

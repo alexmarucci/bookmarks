@@ -1,0 +1,10 @@
+.form {
+    padding: 1em 2em;
+    position: relative;
+    &-group {
+        position: relative;
+    }
+    &-control {
+        width: 100%;
+    }
+}

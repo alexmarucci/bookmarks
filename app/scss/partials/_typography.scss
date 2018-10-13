@@ -1,0 +1,23 @@
+/* Font Imports */
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+/*Font Assignments */
+* {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-weight: 800;
+    color: $color-accent;
+    font-size: $font-size-xl;
+}
+
+/* Helper Classes */
+.text-white { color: #fff !important; }
+.text-danger { color: $color-danger !important; }
+
+@include breakpoint(xs) {
+    body {
+        font-size: 75%;
+    }
+}

@@ -1,0 +1,75 @@
+%base-pseudo-element {
+    content: "";
+    position: absolute;
+    background: currentColor;
+    transform: translate(-50%,-50%);
+    top: 50%;
+}
+$size: 1em;
+$weight: 2px;
+
+.icon {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-block;
+    width: $size;
+    height: $size;
+    text-align: center;
+    vertical-align: middle;
+    color: currentColor;
+
+    &-plus {
+        &:before {
+            @extend %base-pseudo-element;
+            width: $weight;
+            height: $size;
+        }
+        &:after {
+            @extend %base-pseudo-element;
+            width: $size;
+            height: $weight;
+        }
+    }
+
+    &-trash {
+        border-radius: 0 0 3px 3px;
+        border: 2px solid currentColor;
+        border-top: none;
+        margin-top: 7px;
+        
+        &:before {
+            @extend %base-pseudo-element;
+            width: 6px;
+            height: 2px;
+            top: -6px;
+        }
+        &:after {
+            @extend %base-pseudo-element;
+            width: 18px;
+            height: 2px;
+            top: -4px;
+        }
+    }
+    &-rename {
+        width: 2em;
+        height: .6em;
+        border: 2px solid;
+        border-color: transparent;
+        border-width: 2px;
+        box-shadow: 0 0 0 1px, 11px 0 0 0 inset;
+        margin: 6px 0;
+
+        &:before {
+            @extend %base-pseudo-element;
+            background: transparent;
+            width: 1px;
+            height: 16px;
+            left: 14px;
+            border-width: 2px 4px;
+            border-style: solid;
+            box-shadow: 0 0 0 1px inset;
+            border-right-color: transparent;
+            border-left-color: transparent;
+        }
+    }
+}

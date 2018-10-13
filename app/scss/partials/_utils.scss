@@ -1,0 +1,15 @@
+%vertical-align {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// Text Alignment
+.text-left  { text-align: left !important; }
+.text-center  { text-align: center !important; }
+.text-right  { text-align: right !important; }
+
+// Text Transformation
+.text-lowercase  { text-transform: lowercase !important; }
+.text-uppercase  { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }

@@ -1,0 +1,57 @@
+/**
+ * Input styles using material-like design
+ */
+.mat-input {
+    transition: all 1s;
+    &__label {
+        font-size: $font-size-sm;
+        &--large {
+            font-weight: 800;
+            color: $color-accent;
+            font-size: $font-size-xl;
+        }
+        &--floating {
+            position: absolute;
+            left: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $color-tertiary;
+        }
+    }
+    &__field {
+        background: transparent;
+        border: 0;
+        border-bottom: 2px solid $color-primary;
+        outline: 0;
+        padding: 8px;
+        
+        &:focus {
+            border-bottom-color: lighten($color-primary, 20%);
+        }
+        //NOTE: Current Limitation. In order to work with a floating label, this one should be appended after the input tag
+        &:focus + .mat-input__label--floating {
+            transform: translateY(-160%);
+            color: currentColor;
+            transition-duration: .4s;
+        }
+    }
+    &__button-fab {
+        height: 36px;
+        width: 36px;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &--red { color: $color-danger; }
+        &--add-new {
+            position: absolute;
+            right: 1em;
+            background: currentColor;
+            transform: translateY(50%);
+            bottom: 0;
+        }
+    }
+}

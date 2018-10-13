@@ -1,0 +1,15 @@
+/** Import Partials */
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/typography';
+@import 'partials/reset';
+@import 'partials/utils';
+@import 'partials/spacing';
+
+/** Import Components*/
+@import 'components/form';
+@import 'components/input';
+@import 'components/list';
+@import 'components/card';
+@import 'components/pagination';
+@import 'components/icon';

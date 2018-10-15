@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bookmarks App</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/overview.css">
+    <base href="/">
+    <style>[ng-cloak] { display: none; }</style>
+</head>
+<body>
+    <main ng-app="bookmarks" ng-cloack>
+        <section>
+            <global-notification></global-notification>
+            <div class="card card__container card__container--white">
+                <header class="card card__header">
+                    <h1 class="mb-0 text-center">Bookmarks</h1>
+                    <add-bookmark></add-bookmark>
+                </header>
+                <div class="card card__body" ng-view>
+                </div>
+                <div class="card card__footer">
+                   <pagination></pagination>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./dist/polyfill.js"></script>
+    <script src="./dist/app.min.js"></script>
+</body>
+</html>

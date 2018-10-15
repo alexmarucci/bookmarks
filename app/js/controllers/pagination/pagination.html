@@ -1,0 +1,10 @@
+<ul class="pagination" ng-show="$ctrl.pagination.totalPages > 1">
+    <li class="pagination__item pagination__item--first" ng-click="$ctrl.pagination.previous()" ng-class="{'pagination__item--disabled': $ctrl.pagination.isFirstPage()}">&lt;</li>
+    <li class="pagination__item" ng-repeat="p in $ctrl.pagination.totalPagesArray"
+        ng-class="{'pagination__item--active': $ctrl.pagination.getCurrentPage() === p}"
+        ng-click="$ctrl.pagination.goTo(p)"
+    >
+        {{ p }}
+    </li>
+    <li class="pagination__item pagination__item--last" ng-click="$ctrl.pagination.next()" ng-class="{'pagination__item--disabled': $ctrl.pagination.isLastPage()}">&gt;</li>
+</ul>

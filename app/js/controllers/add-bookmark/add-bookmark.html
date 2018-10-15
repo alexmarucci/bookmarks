@@ -1,0 +1,15 @@
+<form name="addBookmarkForm" class="form pt-0" ng-submit="$ctrl.add()" novalidate>
+    <div class="form-group mb-3">
+        <input class="form-control mat-input mat-input__field" type="text" placeholder="https://www.google.com"
+            ng-model="$ctrl.url"
+            url-input url-exists
+            required
+        />
+    </div>
+    <button class="mat-input__button-fab mat-input__button-fab--red mat-input__button-fab--add-new" type="submit"
+        ng-class="{'mat-input__button-fab--disabled': addBookmarkForm.$invalid || addBookmarkForm.$pending}"
+        ng-disabled="addBookmarkForm.$invalid || addBookmarkForm.$pending"
+    >
+        <span class="icon icon-plus text-white"></span>
+    </button>
+</form>

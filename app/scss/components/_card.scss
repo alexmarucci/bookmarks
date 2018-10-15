@@ -8,6 +8,7 @@
         max-height: 800px;
         box-shadow: 3px 5px 20px 6px rgba(0, 0, 0, .15);
         border-radius: 7px;
+        overflow: hidden;
         &--white {
             background: #fff;
         }
@@ -21,8 +22,6 @@
 
     &__header {
         background: $background-light-grey;
-        border-top-right-radius: 7px;
-        border-top-left-radius: 7px;
         border-bottom: 1px solid $color-separator;
         flex-shrink: 0;
     }

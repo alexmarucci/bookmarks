@@ -446,6 +446,8 @@ html, body, main, section {
       transform: translateY(-160%);
       color: currentColor;
       transition-duration: .4s; }
+    .mat-input__field--full {
+      width: 100%; }
   .mat-input__button-fab {
     height: 36px;
     width: 36px;
@@ -455,9 +457,14 @@ html, body, main, section {
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    transition: all .75s;
+    cursor: pointer; }
     .mat-input__button-fab--red {
       color: #E91E63; }
+    .mat-input__button-fab--disabled {
+      color: #607d8b !important;
+      cursor: default; }
     .mat-input__button-fab--add-new {
       position: absolute;
       right: 1em;
@@ -481,9 +488,27 @@ html, body, main, section {
     position: relative;
     font-size: 1em;
     min-height: 32px; }
+    .list-item__title {
+      padding: 0 1.5em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
     .list-item__controls {
       margin-left: auto;
-      color: #607d8b; }
+      color: #607d8b;
+      flex-shrink: 0; }
+      .list-item__controls--edit {
+        display: none !important; }
+    .list-item__editing .list-item__edit,
+    .list-item__editing .list-item__controls--edit {
+      display: block !important; }
+    .list-item__editing .list-item__controls > .icon,
+    .list-item__editing .list-item__title {
+      display: none; }
+    .list-item__edit {
+      display: none !important;
+      flex-grow: 2;
+      padding: 0 1em; }
     .list-item__avatar {
       position: absolute;
       max-height: 26px;
@@ -492,6 +517,8 @@ html, body, main, section {
       .list-item__avatar > svg {
         vertical-align: middle;
         height: 100%; }
+      .list-item__avatar > .index {
+        vertical-align: middle; }
 
 .card {
   display: flex;
@@ -502,7 +529,8 @@ html, body, main, section {
     height: 90%;
     max-height: 800px;
     box-shadow: 3px 5px 20px 6px rgba(0, 0, 0, 0.15);
-    border-radius: 7px; }
+    border-radius: 7px;
+    overflow: hidden; }
     .card__container--white {
       background: #fff; }
     @media (max-width: 767px) {
@@ -513,8 +541,6 @@ html, body, main, section {
         border-radius: 0; } }
   .card__header {
     background: #f9f9f9;
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
     border-bottom: 1px solid #d8d8d8;
     flex-shrink: 0; }
   .card__body {
@@ -530,18 +556,22 @@ html, body, main, section {
   .pagination__item {
     list-style: none;
     padding: .5em;
-    border-radius: 5px; }
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 2em; }
+    .pagination__item--disabled {
+      opacity: 0; }
     .pagination__item--first {
-      margin-right: 5px; }
+      margin-right: auto; }
     .pagination__item--last {
-      margin-left: 5px; }
+      margin-left: auto; }
     .pagination__item--active {
       color: white;
       background: #03A9F4; }
     .pagination__item:hover {
       background: #d8d8d8; }
 
-.icon-plus:before, .icon-plus:after, .icon-trash:before, .icon-trash:after, .icon-rename:before {
+.icon-plus:before, .icon-times:before, .icon-plus:after, .icon-times:after, .icon-trash:before, .icon-trash:after, .icon-rename:before {
   content: "";
   position: absolute;
   background: currentColor;
@@ -557,12 +587,14 @@ html, body, main, section {
   text-align: center;
   vertical-align: middle;
   color: currentColor; }
-  .icon-plus:before {
+  .icon-plus:before, .icon-times:before {
     width: 2px;
     height: 1em; }
-  .icon-plus:after {
+  .icon-plus:after, .icon-times:after {
     width: 1em;
     height: 2px; }
+  .icon-times {
+    transform: rotate(45deg); }
   .icon-trash {
     border-radius: 0 0 3px 3px;
     border: 2px solid currentColor;
@@ -594,3 +626,15 @@ html, body, main, section {
       box-shadow: 0 0 0 1px inset;
       border-right-color: transparent;
       border-left-color: transparent; }
+
+.notification {
+  position: fixed;
+  top: 1em;
+  height: initial;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 20em;
+  width: auto;
+  z-index: 2; }
+  .notification__description--error {
+    color: #E91E63; }

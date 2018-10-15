@@ -16,9 +16,30 @@
         font-size: $font-size-sm;
         min-height: 32px;
         // This would align `__controls` to the end of the "flex-container"
+        &__title {
+            padding: 0 1.5em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
         &__controls {
             margin-left: auto;
             color: $color-tertiary;
+            flex-shrink: 0;
+            &--edit { display: none !important; }
+        }
+        &__editing {    
+            .list-item__edit,
+            .list-item__controls--edit {
+                display: block !important;
+            }
+            .list-item__controls > .icon,
+            .list-item__title { display: none; }
+        }
+        &__edit {
+            display: none !important;
+            flex-grow: 2;
+            padding: 0 1em;
         }
         &__avatar {
             position: absolute;
@@ -28,6 +49,9 @@
             & > svg {
                 vertical-align: middle;
                 height: 100%;
+            }
+            & > .index {
+                vertical-align: middle;
             }
         }
     }

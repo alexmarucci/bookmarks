@@ -1,0 +1,16 @@
+.notification {
+    position: fixed;
+    top: 1em;
+    height: initial;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 20em;
+    width: auto;
+    z-index: 2;
+
+    &__description {    
+        &--error {
+            color: $color-danger;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<li class="list-item" ng-class="{'list-item__editing': $ctrl.editing}">
+    <span class="list-item__avatar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+            <path fill="#F44336" d="M37,43l-13-6l-13,6V9c0-2.2,1.8-4,4-4h18c2.2,0,4,1.8,4,4V43z"/>
+        </svg>
+        <strong class="index">
+            {{$ctrl.bookmark.index}}
+        </strong>
+    </span>
+    <span class="list-item__title">{{ $ctrl.bookmark.url }}</span>
+    <form class="list-item__edit" ng-submit="$ctrl.save()">
+        <input class="mat-input mat-input__field mat-input__field--full" type="text"
+            auto-focus="$ctrl.editing"
+            ng-model="$ctrl.editedBookmark"
+            ng-blur="$ctrl.save()"
+        />
+    </form>
+    <div class="list-item__controls">
+        <a class="icon icon-rename mr-3" href="#" ng-click="$ctrl.edit()"></a>
+        <a class="icon icon-trash text-danger" href="#" ng-click="$ctrl.delete()"></a>
+        <a class="list-item__controls--edit icon icon-times text-danger" href="#" ng-click="$ctrl.revertEdit()"></a>
+    </div>
+</li>

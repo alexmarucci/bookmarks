@@ -9,8 +9,12 @@
         list-style: none;
         padding: .5em;
         border-radius: 5px;
-        &--first { margin-right: 5px; }
-        &--last { margin-left: 5px; }
+        cursor: pointer;
+        margin: 0 2em;
+
+        &--disabled { opacity: 0; }
+        &--first { margin-right: auto; }
+        &--last { margin-left: auto; }
         &--active {
             color: white;
             background: $color-primary-light;
